@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        serviceId: config-server1
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    virtual-host: /
+  profiles:
+    active: dev
+
+
+server:
+  port: 8916
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.16.3.60:8761/eureka/
+
+management:
+  security:
+    enabled: false
+zuul:
+  routes:
+    monitor:
+      path: /monitor/**
+      serviceId: qbao-monitor
+    api:
+      path: /**
+      serviceId: qbao-api
