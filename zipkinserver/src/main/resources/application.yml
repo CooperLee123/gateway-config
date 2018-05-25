@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.16.3.60:8761/eureka/
+
+server:
+  port: 9411
+spring:
+  application:
+    name: zipkin-server
+  sleuth:
+    enabled: false
+  rabbitmq:
+    host: localhost
+    port: 5762
+    username: guest
+    password: guest

@@ -1,0 +1,21 @@
+server:
+  port: 8914
+
+# remote git
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/CooperLee123/eos
+          searchPaths: config
+          username: 1710472477@qq.com
+          password: abv6540
+      label: master
+  application:
+    name: config-server1
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.16.3.60:8761/eureka/
